@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { TopBar } from '@/components/student/TopBar';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Briefcase, Code } from 'lucide-react';
 import WebcamContainer from './components/WebcamContainer';
 import { useSpeech } from './hooks/useSpeech';
 import { auth, db } from '@/lib/firebase';
@@ -352,7 +352,10 @@ export default function InterviewPage() {
     { label: 'Tests', href: '/student/tests', icon: FileText, isActive: false },
     { label: 'Interview', href: '/student/interview', icon: MessageSquare, isActive: true },
     { label: 'Projects', href: '/student/projects', icon: FolderGit2, isActive: false },
-    { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false }
+    { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false },
+    { label: 'Skill Gap', href: '/student/interview/skillgap', icon: Target, isActive: false },
+    { label: 'Opportunities', href: '/student/oppurtunits', icon: Briefcase, isActive: false },
+    { label: 'Code', href: '/student/code', icon: Code, isActive: false }
   ];
 
   return (

@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/Sidebar';
-import { TopBar } from '@/components/student/TopBar';
+import { TopBar, TopBarMain } from '@/components/student/TopBar';
 import { ResumeUploader } from '@/components/student/ResumeUploader';
 import { MockSteps } from '@/components/student/MockSteps';
 import { ResumeInsights } from '@/components/student/ResumeInsights';
 import { ResumeAnalysis, DashboardStatus } from '@/types/resume';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Briefcase, Code } from 'lucide-react';
 import { auth, db } from '@/lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -24,6 +24,8 @@ export default function StudentDashboard() {
     const [realName, setRealName] = useState<string>("Student");
     const [hasQuiz, setHasQuiz] = useState(false);
     const [hasInterview, setHasInterview] = useState(false);
+    const [serverError, setServerError] = useState<string | null>(null);
+    const [fileHash, setFileHash] = useState<string | null>(null);
 
     // Load from localStorage on mount
     useEffect(() => {
@@ -118,6 +120,8 @@ export default function StudentDashboard() {
     const handleResumeUpload = async (file: File) => {
         setIsAnalyzing(true);
         setStatus('RESUME_UPLOADED');
+        setServerError(null);
+        setFileHash(null);
 
         try {
             // Create FormData to send actual file
@@ -133,16 +137,16 @@ export default function StudentDashboard() {
             const response = await fetch('/api/resume/analyze', {
                 method: 'POST',
                 body: formData
-                // No Content-Type header - browser sets it automatically with boundary for FormData
             });
 
+            const result = await response.json().catch(() => null);
+
             if (!response.ok) {
-                throw new Error('Analysis failed');
+                const errorMessage = result?.error || 'Analysis failed';
+                throw new Error(errorMessage);
             }
 
-            const result = await response.json();
-
-            if (result.success && result.data) {
+            if (result && result.success && result.data) {
                 setAnalysis(result.data);
                 setStatus('ANALYZED');
                 setProfileProgress(45);
@@ -150,10 +154,18 @@ export default function StudentDashboard() {
                 // Store in localStorage
                 localStorage.setItem('resumeAnalysis', JSON.stringify(result.data));
             } else {
-                throw new Error(result.error || 'Unknown error');
+                throw new Error(result?.error || 'Unknown error');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Resume analysis error:', error);
+
+            // Handle specific duplicate error from backend
+            if (error.message && error.message.includes("Duplicate resume")) {
+                setServerError("DUPLICATE_RESUME");
+            } else {
+                setServerError(error.message || "Upload failed");
+            }
+
             setStatus('RESUME_UPLOADED');
         } finally {
             setIsAnalyzing(false);
@@ -190,6 +202,24 @@ export default function StudentDashboard() {
             href: '/student/iuts',
             icon: Target,
             isActive: false
+        },
+        {
+            label: 'Skill Gap',
+            href: '/student/interview/skillgap',
+            icon: Target,
+            isActive: false
+        },
+        {
+            label: 'Opportunities',
+            href: '/student/oppurtunits',
+            icon: Briefcase,
+            isActive: false
+        },
+        {
+            label: 'Code',
+            href: '/student/code',
+            icon: Code,
+            isActive: false
         }
     ];
 
@@ -200,7 +230,7 @@ export default function StudentDashboard() {
 
             {/* Main Content */}
             <div className="pl-64">
-                <TopBar
+                <TopBarMain
                     profileProgress={profileProgress}
                     status={status}
                     userName={realName}
@@ -268,6 +298,8 @@ export default function StudentDashboard() {
                             <ResumeUploader
                                 onUpload={handleResumeUpload}
                                 isAnalyzing={isAnalyzing}
+                                serverError={serverError}
+                                fileHash={fileHash}
                             />
                         </div>
 
@@ -322,8 +354,8 @@ export default function StudentDashboard() {
                         {analysis ? (
                             <ResumeInsights analysis={analysis} />
                         ) : (
-                            <MockSteps />
-                        )}
+                            // <MockSteps />
+                            null)}
                     </div>
                 </main>
             </div>

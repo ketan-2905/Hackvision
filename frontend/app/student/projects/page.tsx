@@ -3,7 +3,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { TopBar } from '@/components/student/TopBar';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Github, ExternalLink, Download, Copy } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Github, ExternalLink, Download, Copy, Briefcase, Code } from 'lucide-react';
 import { auth, db } from '@/lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -330,7 +330,10 @@ export default function ProjectsPage() {
         { label: 'Tests', href: '/student/tests', icon: FileText, isActive: false },
         { label: 'Interview', href: '/student/interview', icon: MessageSquare, isActive: false },
         { label: 'Projects', href: '/student/projects', icon: FolderGit2, isActive: true },
-        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false }
+        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false },
+        { label: 'Skill Gap', href: '/student/interview/skillgap', icon: Target, isActive: false },
+        { label: 'Opportunities', href: '/student/oppurtunits', icon: Briefcase, isActive: false },
+        { label: 'Code', href: '/student/code', icon: Code, isActive: false }
     ];
 
     const getScoreColor = (score: number) => {

@@ -380,8 +380,13 @@ export default function LoginPage() {
                                 <select
                                     value={formData.role}
                                     onChange={(e) => {
-                                        setFormData({ ...formData, role: e.target.value as UserRole });
-                                        setRoleSelected(e.target.value);
+                                        const selectedRole = e.target.value;
+                                        setFormData({ ...formData, role: selectedRole as UserRole });
+                                        setRoleSelected(selectedRole);
+
+                                        if (selectedRole === 'recruiter') {
+                                            router.push('/recruiter');
+                                        }
                                     }}
                                     className="w-full border-2 border-slate-900 rounded-none bg-stone-50 px-3 py-3 text-slate-900 focus:outline-none focus:border-sky-600"
                                 >

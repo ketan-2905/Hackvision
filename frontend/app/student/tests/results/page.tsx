@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/Sidebar';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Award, CheckCircle, XCircle, RotateCcw, Home } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Award, CheckCircle, XCircle, RotateCcw, Home, Briefcase, Code } from 'lucide-react';
 import { auth } from '@/lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -112,7 +112,10 @@ export default function ResultsPage() {
         { label: 'Tests', href: '/student/tests', icon: FileText, isActive: true },
         { label: 'Interview', href: '/student/interview', icon: MessageSquare, isActive: false },
         { label: 'Projects', href: '/student/projects', icon: FolderGit2, isActive: false },
-        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false }
+        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false },
+        { label: 'Skill Gap', href: '/student/interview/skillgap', icon: Target, isActive: false },
+        { label: 'Opportunities', href: '/student/oppurtunits', icon: Briefcase, isActive: false },
+        { label: 'Code', href: '/student/code', icon: Code, isActive: false }
     ];
 
     const getScoreColor = (pct: number) => {

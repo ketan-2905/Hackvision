@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/Sidebar';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, ChevronLeft, ChevronRight, Send } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, ChevronLeft, ChevronRight, Send, Briefcase, Code } from 'lucide-react';
 
 type Question = {
     id: string;
@@ -64,7 +64,10 @@ export default function QuizPage() {
         { label: 'Tests', href: '/student/tests', icon: FileText, isActive: true },
         { label: 'Interview', href: '/student/interview', icon: MessageSquare, isActive: false },
         { label: 'Projects', href: '/student/projects', icon: FolderGit2, isActive: false },
-        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false }
+        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false },
+        { label: 'Skill Gap', href: '/student/interview/skillgap', icon: Target, isActive: false },
+        { label: 'Opportunities', href: '/student/oppurtunits', icon: Briefcase, isActive: false },
+        { label: 'Code', href: '/student/code', icon: Code, isActive: false }
     ];
 
     if (!quiz) {
@@ -140,8 +143,8 @@ export default function QuizPage() {
                                         key={idx}
                                         onClick={() => handleSelectAnswer(currentQ.id, idx)}
                                         className={`w-full text-left p-4 border-2 border-slate-900 transition-all ${isSelected
-                                                ? 'bg-sky-300 shadow-[4px_4px_0px_#0f172a]'
-                                                : 'bg-white hover:bg-stone-50 shadow-[2px_2px_0px_#0f172a] hover:shadow-[4px_4px_0px_#0f172a] hover:translate-y-1'
+                                            ? 'bg-sky-300 shadow-[4px_4px_0px_#0f172a]'
+                                            : 'bg-white hover:bg-stone-50 shadow-[2px_2px_0px_#0f172a] hover:shadow-[4px_4px_0px_#0f172a] hover:translate-y-1'
                                             }`}
                                     >
                                         <div className="flex items-center gap-3">
@@ -174,10 +177,10 @@ export default function QuizPage() {
                                     key={q.id}
                                     onClick={() => setCurrentQuestion(idx)}
                                     className={`w-10 h-10 border-2 border-slate-900 font-black text-sm ${idx === currentQuestion
-                                            ? 'bg-slate-900 text-white'
-                                            : answers[q.id] !== undefined
-                                                ? 'bg-sky-300 text-slate-900'
-                                                : 'bg-white text-slate-900 hover:bg-stone-100'
+                                        ? 'bg-slate-900 text-white'
+                                        : answers[q.id] !== undefined
+                                            ? 'bg-sky-300 text-slate-900'
+                                            : 'bg-white text-slate-900 hover:bg-stone-100'
                                         } shadow-[2px_2px_0px_#0f172a] transition-all`}
                                 >
                                     {idx + 1}

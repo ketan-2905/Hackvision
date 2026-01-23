@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/Sidebar';
-import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Code, Brain, TrendingUp, Zap } from 'lucide-react';
+import { LayoutDashboard, FileText, FolderGit2, Target, MessageSquare, Code, Brain, TrendingUp, Zap, Briefcase } from 'lucide-react';
 import { TopBar } from '@/components/student/TopBar';
 import { auth, db } from '@/lib/firebase';
 import { doc, getDoc, onSnapshot } from 'firebase/firestore';
@@ -96,7 +96,10 @@ export default function TestsPage() {
         { label: 'Tests', href: '/student/tests', icon: FileText, isActive: true },
         { label: 'Interview', href: '/student/interview', icon: MessageSquare, isActive: false },
         { label: 'Projects', href: '/student/projects', icon: FolderGit2, isActive: false },
-        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false }
+        { label: 'IUTS', href: '/student/iuts', icon: Target, isActive: false },
+        { label: 'Skill Gap', href: '/student/interview/skillgap', icon: Target, isActive: false },
+        { label: 'Opportunities', href: '/student/oppurtunits', icon: Briefcase, isActive: false },
+        { label: 'Code', href: '/student/code', icon: Code, isActive: false }
     ];
 
     return (

@@ -199,7 +199,7 @@ export async function signOutUser(): Promise<void> {
 export function getDashboardRoute(role: UserRole): string {
     switch (role) {
         case 'student':
-            return '/dashboard/student';
+            return '/student/dashboard';
         case 'recruiter':
             return '/dashboard/recruiter';
         case 'college_admin':
