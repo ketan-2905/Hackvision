@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read their own data, admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Users can update their own data
+      allow write: if isOwner(userId);
+      
+      // Skills subcollection
+      match /skills/{skillId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
+      }
+      
+      // Projects subcollection
+      match /projects/{projectId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
+      }
+      
+      // Experience subcollection
+      match /experience/{expId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
+      }
+      
+      // Education subcollection
+      match /education/{eduId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId);
+      }
+    }
+  }
+}

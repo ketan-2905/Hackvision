@@ -29,10 +29,10 @@ export default function AscendingPlaneScene({ modelScale = 0.04, modelPosition =
   return (
     <div className="w-full h-full">
       {/* Alpha true allows the background of the section to show through */}
-      <Canvas 
-        camera={{ position: [0, 0, 5], fov: 45 }} 
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 45 }}
         gl={{ alpha: true, antialias: true }}
-        style={{ pointerEvents: 'none' }} 
+        style={{ pointerEvents: 'none' }}
       >
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} intensity={2} />

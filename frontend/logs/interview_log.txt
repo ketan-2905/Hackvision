@@ -1,0 +1,160 @@
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:30:45.136Z
+Transcript: "So uh, I will use anticavity to debug the issue."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 22 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:31:15.219Z
+Transcript: "Uh, I will reduce its size and make it faster."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 18 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:36:17.872Z
+Transcript: "yes i can explain the difference between"
+Average Anxiety: 3.4%
+Anxiety Range: 0.0% - 23.9%
+Data Points: 15 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:36:39.869Z
+Transcript: "OK. To check the production carefully and then. Find out the fault."
+Average Anxiety: 3.5%
+Anxiety Range: 0.0% - 29.5%
+Data Points: 27 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:44:57.541Z
+Transcript: "So I used anti gravity to. Fix the bug."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 16 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:45:23.466Z
+Transcript: "So I used anticavity to fix the bug."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 14 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:45:53.648Z
+Transcript: "So I use Google's anti gravity to approach bugs."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 17 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-22T21:46:20.798Z
+Transcript: "I manually test the application."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 19 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:32:38.086Z
+Transcript: "So I used anti gravity to fix the bug."
+Average Anxiety: 0.2%
+Anxiety Range: 0.0% - 1.8%
+Data Points: 15 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:33:00.093Z
+Transcript: "I used anticavity to fix the bug."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.2%
+Data Points: 14 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:33:24.274Z
+Transcript: "I use antigravity to approach the issue."
+Average Anxiety: 0.4%
+Anxiety Range: 0.0% - 5.0%
+Data Points: 13 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:34:00.023Z
+Transcript: "Itest website static."
+Average Anxiety: 2.5%
+Anxiety Range: 0.0% - 12.4%
+Data Points: 14 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:40:00.211Z
+Transcript: "I use anticavity to fix the bug."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.1%
+Data Points: 15 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:41:18.225Z
+Transcript: "I used Google's anti gravity."
+Average Anxiety: 0.1%
+Anxiety Range: 0.0% - 0.3%
+Data Points: 10 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:44:36.740Z
+Transcript: "I do it myself."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.1%
+Data Points: 7 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T02:44:45.037Z
+Transcript: "i test manually"
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 6 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T03:05:40.331Z
+Transcript: "Hello. Hello."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.0%
+Data Points: 13 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T03:05:50.542Z
+Transcript: "Hello. Hello."
+Average Anxiety: 0.5%
+Anxiety Range: 0.0% - 2.2%
+Data Points: 11 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T03:06:20.440Z
+Transcript: "Hello. Hello."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.1%
+Data Points: 14 samples
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+Timestamp: 2026-01-23T03:06:36.725Z
+Transcript: "Hello, hello, hello, hello."
+Average Anxiety: 0.0%
+Anxiety Range: 0.0% - 0.3%
+Data Points: 9 samples
+------------------------------------------------------------------

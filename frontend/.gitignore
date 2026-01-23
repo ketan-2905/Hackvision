@@ -33,6 +33,19 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Firebase credentials (NEVER commit these!)
+*firebase*.json
+Firebase_Credential.json
+ascendra-*.json
+
+# Zip files
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
 # vercel
 .vercel
 

@@ -41,9 +41,9 @@
 //         ))}
 //       </div>
 //       {/* Changed emerald-600/700/900 to sky-300/700/900 */}
-//       <button className="bg-sky-300 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-sky-700 transition-all border-b-4 border-sky-900 active:border-b-0 active:translate-y-1">
+//       <a href="/login" className="bg-sky-300 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-sky-700 transition-all border-b-4 border-sky-900 active:border-b-0 active:translate-y-1 inline-block">
 //         Student Portal
-//       </button>
+//       </a>
 //     </div>
 //   </nav>
 // );
@@ -271,10 +271,10 @@
 //           <div className="flex flex-col sm:flex-row justify-center gap-4">
 //             <button className="px-12 py-6 bg-slate-900 text-white font-bold uppercase tracking-widest hover:bg-black transition-all shadow-[8px_8px_0px_rgba(0,0,0,0.2)]">
 //               Begin Assessment
-//             </button>
+//             </a>
 //             <button className="px-12 py-6 bg-white text-slate-900 font-bold uppercase tracking-widest hover:bg-slate-100 transition-all shadow-[8px_8px_0px_rgba(0,0,0,0.2)]">
 //               Partner with Us
-//             </button>
+//             </a>
 //           </div>
 //           <p className="mt-12 text-[10px] font-bold uppercase tracking-[0.4em] opacity-80 italic">Standardized for the Class of 2026</p>
 //         </div>
@@ -348,9 +348,9 @@ const Navbar = () => (
         ))}
       </div>
       {/* Changed emerald-600/700/900 to sky-300/700/900 */}
-      <button className="bg-sky-300 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-sky-700 transition-all border-b-4 border-sky-900 active:border-b-0 active:translate-y-1">
-        Student Portal
-      </button>
+      <a href="/login" className="bg-sky-300 text-white px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-sky-700 transition-all border-b-4 border-sky-900 active:border-b-0 active:translate-y-1 inline-block">
+        Login
+      </a>
     </div>
   </nav>
 );
@@ -625,3 +625,4 @@ export default function AscendraAcademic() {
     </div>
   );
 }
+
